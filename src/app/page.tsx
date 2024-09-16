@@ -1,101 +1,158 @@
+import MaxWrapper from "@/components/MaxWrapper";
 import Image from "next/image";
+import { Josefin_Sans } from "next/font/google";
 
+const josefin = Josefin_Sans({ subsets: ["latin"], weight: ["300"] });
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const imagesGrid = [
+    { id: 1, src: "/images/mobile/image-deep-earth.jpg", title: "Deep Earth" },
+    {
+      id: 2,
+      src: "/images/mobile/image-night-arcade.jpg",
+      title: "Night Arcade",
+    },
+    {
+      id: 3,
+      src: "/images/mobile/image-soccer-team.jpg",
+      title: "Soccer Team VR",
+    },
+    { id: 4, src: "/images/mobile/image-grid.jpg", title: "The Grid" },
+    {
+      id: 5,
+      src: "/images/mobile/image-from-above.jpg",
+      title: "From Up Above VR",
+    },
+    {
+      id: 6,
+      src: "/images/mobile/image-pocket-borealis.jpg",
+      title: "Pocket Borealis",
+    },
+    {
+      id: 7,
+      src: "/images/mobile/image-curiosity.jpg",
+      title: "The Curiosity",
+    },
+    {
+      id: 8,
+      src: "/images/mobile/image-fisheye.jpg",
+      title: "Make It Fisheye",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const imagesGridDesktop = [
+    { id: 1, src: "/images/desktop/image-deep-earth.jpg", title: "Deep Earth" },
+    {
+      id: 2,
+      src: "/images/desktop/image-night-arcade.jpg",
+      title: "Night Arcade",
+    },
+    {
+      id: 3,
+      src: "/images/desktop/image-soccer-team.jpg",
+      title: "Soccer Team VR",
+    },
+    { id: 4, src: "/images/desktop/image-grid.jpg", title: "The Grid" },
+    {
+      id: 5,
+      src: "/images/desktop/image-from-above.jpg",
+      title: "From Up Above VR",
+    },
+    {
+      id: 6,
+      src: "/images/desktop/image-pocket-borealis.jpg",
+      title: "Pocket Borealis",
+    },
+    {
+      id: 7,
+      src: "/images/desktop/image-curiosity.jpg",
+      title: "The Curiosity",
+    },
+    {
+      id: 8,
+      src: "/images/desktop/image-fisheye.jpg",
+      title: "Make It Fisheye",
+    },
+  ];
+  return (
+    <MaxWrapper>
+      <main className="pt-28">
+        <div className="flex flex-col lg:flex-row items-center max-w-[860px] xl:max-w-[1110px] ">
+          <Image
+            src={"/images/mobile/image-interactive.jpg"}
+            width={315}
+            height={220}
+            alt="Image of an interactive VR"
+            className="w-full md:w-[600px] flex-1   "
+          />
+          <div className="flex-1 bg-white max-w-[500px] lg:-translate-x-36 lg:translate-y-36  pt-12">
+            <h2 className="uppercase text-center lg:text-left lg:pl-10 text-black font-light text-titleXs">
+              The leader in interactive VR
+            </h2>
+
+            <p
+              className={`${josefin.className} lg:pl-10 leading-loose text-center lg:text-left text-veryDarkGray lg:pb-14 font-normal text-[18px]`}
+            >
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some the best companies around the
+              globe. Our award-winning creations digital experiences that bind
+              to their brand
+            </p>
+          </div>
+        </div>
+
+        <div className="pt-20 lg:pt-64 lg:pb-12 ">
+          <div className=" flex flex-col lg:flex-row lg:justify-between  lg:max-w-[860px] xl:max-w-[1110px] lg:items-centre">
+            <h2 className="uppercase text-center lg:text-left pb-9 lg:pb-0 text-black font-light text-titleXs">
+              Our creations
+            </h2>
+
+            <div className="pb-32 flex flex-col lg:hidden gap-10 ">
+              <div className="grid grid-cols-1 lg:hidden sm:grid-cols-2   gap-8 ">
+                {imagesGrid.map((image) => (
+                  <div
+                    key={image.id}
+                    className="relative h-[150px] sm:min-w-[250px] md:max-w-[450px]"
+                  >
+                    <Image
+                      src={image.src}
+                      width={315}
+                      height={220}
+                      alt="Image of an interactive VR"
+                      className="w-full h-full brightness-50 hover:brightness-100 object-cover cursor-pointer transition-all ease-in-out duration-300"
+                    />
+
+                    <p className="uppercase absolute bottom-4 left-5 text-white  max-w-40 font-light text-[28px]">
+                      {image.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <button className=" hover:bg-black hover:text-white  transition-all ease-in-out duration-300 uppercase text-center border border-black py-2 w-[200px] self-center  text-black font-semibold tracking-widest text-[28px]">
+              See All
+            </button>
+          </div>
+        </div>
+
+        <div className=" hidden pb-32 max-w-[860px] lg:grid grid-cols-3 xl:grid-cols-4 xl:max-w-[1110px] gap-8 ">
+          {imagesGridDesktop.map((image) => (
+            <div key={image.id} className="relative group h-[450px]  w-[256px]">
+              <Image
+                src={image.src}
+                width={256}
+                height={450}
+                alt="Image of an interactive VR"
+                className="w-full h-full brightness-50 object-cover group-hover:brightness-100 cursor-pointer transition-all ease-in-out duration-300 "
+              />
+
+              <p className="uppercase absolute bottom-4 left-5  text-white max-w-40 font-light text-[28px]">
+                {image.title}
+              </p>
+            </div>
+          ))}
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </MaxWrapper>
   );
 }
